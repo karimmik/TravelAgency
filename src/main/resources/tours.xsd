@@ -1,22 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://courses.fit.cvut.cz/NI-AM1/tutorials/web-services/"
            targetNamespace="https://courses.fit.cvut.cz/NI-AM1/tutorials/web-services/" elementFormDefault="qualified">
 
-    <xs:element name="getToursRequest">
-        <xs:complexType>
-            <xs:sequence/>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getToursResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="tour" type="tns:tour"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- my own methods and types -->
-
     <xs:element name="getBookingRequest">
         <xs:complexType>
             <xs:sequence/>
@@ -73,7 +57,6 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- my own types -->
 
     <xs:complexType name="booking">
         <xs:sequence>
@@ -90,21 +73,4 @@
             <xs:element name="date" type="xs:date"/>
         </xs:sequence>
     </xs:complexType>
-
-    <!-- end of own methods and types-->
-
-    <xs:complexType name="tour">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="type" type="tns:tourType"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:simpleType name="tourType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="CRUISES"/>
-            <xs:enumeration value="SKI"/>
-            <xs:enumeration value="BEACH"/>
-        </xs:restriction>
-    </xs:simpleType>
 </xs:schema>
